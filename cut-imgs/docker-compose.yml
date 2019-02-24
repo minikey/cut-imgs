@@ -1,0 +1,11 @@
+version: '2'
+services:
+  puppeteer:
+    image: "docker.io/alekzonder/puppeteer"
+    ports:
+      - "8668:8668"
+    volumes:
+      - ./screenshots:/screenshots
+      - ./app:/app
+    command: "node capture"
+    container_name: web-into-imgs
